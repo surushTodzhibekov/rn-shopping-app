@@ -13,7 +13,7 @@ const HomeScreen = () => {
   const navigation = useNavigation<DetailScreenProp>();
   return (
     <View style={styles.container}>
-      <Text>HomeScreen bare</Text>
+      <Text style={styles.text}>HomeScreen bare</Text>
       <Button
         title="Go to Details"
         onPress={() => navigation.navigate('DetailScreen')}
@@ -28,5 +28,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  text: {
+    fontFamily: 'Poppins-Regular',
   },
 });
