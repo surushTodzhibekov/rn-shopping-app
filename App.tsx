@@ -9,6 +9,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Platform,
 } from 'react-native';
 
 import {
@@ -19,6 +20,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import RootNavigator from './src/navigators/RootNavigator';
+
+const isAndroid = Platform.OS === 'android';
+console.log('StatusBar', StatusBar.currentHeight);
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -69,8 +73,7 @@ function App(): JSX.Element {
 const styles = StyleSheet.create({
   sectionContainer: {
     flex: 1,
-    marginTop: 32,
-    paddingHorizontal: 24,
+    marginTop: StatusBar.currentHeight,
   },
   sectionTitle: {
     fontSize: 24,

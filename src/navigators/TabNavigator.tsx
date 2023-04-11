@@ -20,6 +20,7 @@ const TabNavigator = () => {
       <Tab.Screen
         name="Home"
         options={{
+          headerShown: false,
           tabBarIcon(props) {
             return <Entypo name="home" {...props} />;
           },
